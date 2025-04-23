@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/', express.static('public'));
 app.use('/api/products', productsRoutes);
+app.use('/img', express.static('public/img/img-storage.png'));
 
 connectToDatabase(app).then(() => {
     app.listen(PORT, () => {

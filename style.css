@@ -33,7 +33,7 @@
     width: 100%;
     height: 100%;
     z-index: -1; /* Coloca a imagem atrás de todos os elementos */
-    background-image: url('https://cdn-icons-png.flaticon.com/512/18302/18302917.png');
+    background-image: url('img/img-storage.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain; /* Ajusta a imagem para caber no centro sem distorção */
