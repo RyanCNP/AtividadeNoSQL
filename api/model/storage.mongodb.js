@@ -1,5 +1,5 @@
-use('TechStorage')
-const recordStock = [
+use('test')
+const storageList = [
     {
         "id": 1,
         "cod_prod": "NT-CEL-001",
@@ -46,7 +46,7 @@ const recordStock = [
         "descricao": "Estoque estável de Consoles Quantum Play após campanha promocional."
     }
 ]
-db.storage.insertMany(recordStock)
+db.storage.insertMany(storageList)
 
-use('TechStorage')
-db.storage.find()
+use('test')
+db.estoque.find()
