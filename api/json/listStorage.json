@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "cod_prod": "NT-CEL-001",
+      "entryDate": "2025-03-15",
+      "exitDate": null,
+      "upDate": "2025-04-20",
+      "qtd": 50,
+      "descricao": "Entrada inicial de 50 unidades do Smartphone Orion Z5."
+    },
+    {
+      "id": 2,
+      "cod_prod": "VT-NBK-002",
+      "entryDate": "2025-02-28",
+      "exitDate": "2025-04-10",
+      "upDate": "2025-04-10",
+      "qtd": 0,
+      "descricao": "Estoque zerado após saída de todas as unidades do Notebook Titan X15."
+    },
+    {
+      "id": 3,
+      "cod_prod": "GV-TV-003",
+      "entryDate": "2025-01-20",
+      "exitDate": null,
+      "upDate": "2025-04-15",
+      "qtd": 15,
+      "descricao": "Reposição parcial de Smart TVs Andromeda 55\"."
+    },
+    {
+      "id": 4,
+      "cod_prod": "NT-AUD-004",
+      "entryDate": "2025-04-01",
+      "exitDate": "2025-04-18",
+      "upDate": "2025-04-18",
+      "qtd": 10,
+      "descricao": "Baixa de 20 unidades dos Fones de Ouvido NebulaSound Pro, restando 10 em estoque."
+    },
+    {
+      "id": 5,
+      "cod_prod": "QC-GME-005",
+      "entryDate": "2025-03-10",
+      "exitDate": null,
+      "upDate": "2025-04-22",
+      "qtd": 35,
+      "descricao": "Estoque estável de Consoles Quantum Play após campanha promocional."
+    }
+  ]
+  
