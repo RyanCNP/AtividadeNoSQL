@@ -1,0 +1,46 @@
+@baseURL = http://localhost:3000/api/storage
+@id = 680b9b2e0b237f145fca6cf0
+
+###
+// GET - Lista todos os registros do Estoque
+GET {{baseURL}}?page=1&limit=10&sort=_id&order=asc&nome=soro
+Content-Type: application/json
+
+###
+// GET - Lista os registros do Estoque pelo ID
+GET {{baseURL}}/{{id}}
+Content-Type: application/json
+
+###
+// DELETE - Remove um registro do Estoque pelo id
+DELETE {{baseURL}}/{{id}}
+Content-Type: application/json
+
+
+###
+// POST - Insere um novo registro no Estoque
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "cod_prod": "NT-CEL-001",
+    "entryDate": "2025-03-15",
+    "exitDate": null,
+    "upDate": "2025-04-29",
+    "qtd": 35,
+    "descricao": "Reposição de 35u no estoque de Smartphone Orion Z5."
+}
+
+###
+// PUT - Altera um registro do Estoque pelo Id
+PUT {{baseURL}}/{{id}}
+Content-Type: application/json
+
+{
+    "cod_prod": "NT-CEL-002",
+    "entryDate": "2025-05-15",
+    "exitDate": null,
+    "upDate": "2025-07-29",
+    "qtd": 35,
+    "descricao": "Reposição de 35u no estoque de Smartphone Orion Z5."
+}
