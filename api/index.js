@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000
 app.use(cors()) //Habilita o CORS Cross-Origin resource sharing
 app.use(express.json())//parse do JSON
 //rota pública
-app.use('/', express.static('public'))
+app.use('/', express.static('public/index.html'))
 //Rotas do app
 app.use('/api/storage', storageRoutes)
 //define o favicon
