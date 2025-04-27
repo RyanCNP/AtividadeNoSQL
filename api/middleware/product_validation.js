@@ -1,4 +1,3 @@
-// === middleware/product_validation.js ===
 const { body } = require('express-validator');
 
 
