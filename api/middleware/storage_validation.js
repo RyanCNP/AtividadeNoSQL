@@ -18,7 +18,7 @@ export const validadeteObjectId = [
     validateRequest
 ];
 
-export const validatetStorage = [
+export const validateStorage = [
     check("cod_prod")
         .notEmpty()
         .withMessage("Código do produto é obrigatório.")
