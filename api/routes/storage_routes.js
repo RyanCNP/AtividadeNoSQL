@@ -6,13 +6,13 @@ import {
     getStorageByProduct,
     getStorageList
 } from '../controllers/storage_controller.js';
-import { validadetObjectId, validateStorageUpdate, validatetStorage } from '../middleware/storage_validation.js';
+import { validadeObjectId, validateStorageUpdate, validateStorage } from '../middleware/storage_validation.js';
 
 const router = express.Router();
 
 router.get('/', getStorageList);
 router.get('/:cod_prod', validadetObjectId, getStorageByProduct);
-router.post('/', validatetStorage, createStorage);
+router.post('/', validateStorage, createStorage);
 router.put('/:cod_prod', validadetObjectId, validateStorageUpdate, updateStorage);
 router.delete('/:cod_prod', validadetObjectId, deleteStorage);
 

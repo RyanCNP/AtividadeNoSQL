@@ -44,7 +44,7 @@ export const getProducts = async (req, res) => {
   }
 };
 
-// Get a product by ID
+// Retorna produto pelo ID
 export const getProductById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -62,7 +62,7 @@ export const getProductById = async (req, res) => {
   }
 };
 
-// Create a new product
+// Cria novo produto JSON
 export const createProduct = async (req, res) => {
   try {
     const { nome, categoria, marca, descricao, preco, cod_prod } = req.body;
@@ -103,7 +103,7 @@ export const updateProduct = async (req, res) => {
   }
 };
 
-// Delete product
+// Deleta produto
 export const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
