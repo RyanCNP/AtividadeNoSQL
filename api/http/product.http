@@ -1,0 +1,32 @@
+### GET - Listar todos os produtos
+GET http://localhost:3000/api/products
+
+### GET - product pelo ID
+GET http://localhost:3000/api/products/{{id}}
+
+### PSOT - CrIar novo produto
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "cod_produto": "PRD002",
+  "name": "Produto Example",
+  "price": 120.50,
+  "description": "Exemplo de produto",
+  "category": "Categoria Exemplo"
+}
+
+### PUT - Atualizar o produto pelo ID
+PUT http://localhost:3000/api/products/{{id}}
+Content-Type: application/json
+
+{
+  "cod_produto": "PRD002",
+  "name": "Produto Atualizado",
+  "price": 150.00,
+  "description": "Descrição atualizada",
+  "category": "Categoria Atualizada"
+}
+
+### DELETE - deletar produto pelo id
+DELETE http://localhost:3000/api/products/{{id}}
