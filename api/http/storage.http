@@ -3,7 +3,7 @@
 
 ###
 // GET - Lista todos os registros do Estoque
-GET {{baseURL}}?page=1&limit=10&sort=_id&order=asc&nome=soro
+GET {{baseURL}}
 Content-Type: application/json
 
 ###
