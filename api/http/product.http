@@ -1,11 +1,14 @@
+@baseURL = http://localhost:3000/api/products
+@id = 680e2308bd6b25e61b43fca9
+
 ### GET - Listar todos os produtos
-GET http://localhost:3000/api/products
+GET {{baseURL}}
 
 ### GET - product pelo ID
-GET http://localhost:3000/api/products/{{id}}
+GET {{baseURL}}/{{id}}
 
 ### PSOT - CrIar novo produto
-POST http://localhost:3000/api/products
+POST {{baseURL}}
 Content-Type: application/json
 
 {
@@ -17,7 +20,7 @@ Content-Type: application/json
 }
 
 ### PUT - Atualizar o produto pelo ID
-PUT http://localhost:3000/api/products/{{id}}
+PUT {{baseURL}}/{{id}}
 Content-Type: application/json
 
 {
@@ -29,4 +32,4 @@ Content-Type: application/json
 }
 
 ### DELETE - deletar produto pelo id
-DELETE http://localhost:3000/api/products/{{id}}
+DELETE {{baseURL}}/{{id}}

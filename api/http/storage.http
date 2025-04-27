@@ -1,5 +1,5 @@
 @baseURL = http://localhost:3000/api/storage
-@id = 680b9b2e0b237f145fca6cf0
+@id = 680e22dcf44581250a666040
 
 ###
 // GET - Lista todos os registros do Estoque

@@ -1,4 +1,4 @@
-use('test')
+use('TechStorage')
 const storageList = [
     {
         "id": 1,
@@ -46,7 +46,7 @@ const storageList = [
         "descricao": "Estoque estável de Consoles Quantum Play após campanha promocional."
     }
 ]
-db.storage.insertMany(storageList)
+db.storage.insertMany(storageList);
 
-use('test')
-db.estoque.find()
+use('TechStorage')
+db.storage.find();

@@ -1,4 +1,4 @@
-use('test')
+use('TechStorage')
 const productsList = [
 	{
 		"id": 1,
@@ -46,4 +46,7 @@ const productsList = [
 		"cod_prod": "QC-GME-005"
 	}
 ]
-db.products.insertMany(productsList)
+db.products.insertMany(productsList);
+
+use('TechStorage')
+db.products.find();
