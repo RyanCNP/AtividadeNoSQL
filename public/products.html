@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Storage - Gerenciamento de Produtos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Tech Storage</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html" class="active">Produtos</a></li>
+                    <li><a href="estoque.html">Estoque</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard-header">
+            <div class="container">
+                <h2>Gerenciamento de Produtos</h2>
+                <p>Cadastre, edite e gerencie seus produtos eletrônicos</p>
+            </div>
+        </section>
+
+        <section class="data-management">
+            <div class="container">
+                <div class="management-tools">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Pesquisar produtos..." id="product-search">
+                        <button class="search-btn">Buscar</button>
+                    </div>
+                    <button class="btn btn-primary add-btn">+ Adicionar Produto</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Produto</th>
+                                <th>Categoria</th>
+                                <th>Preço</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Smartphone Galaxy S22</td>
+                                <td>Celulares</td>
+                                <td>R$ 3.999,00</td>
+                                <td><span class="status active">Ativo</span></td>
+                                <td class="actions">
+                                    <button class="action-btn edit">Editar</button>
+                                    <button class="action-btn delete">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Notebook Dell XPS 13</td>
+                                <td>Notebooks</td>
+                                <td>R$ 7.499,00</td>
+                                <td><span class="status active">Ativo</span></td>
+                                <td class="actions">
+                                    <button class="action-btn edit">Editar</button>
+                                    <button class="action-btn delete">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Smart TV LG 55"</td>
+                                <td>TVs</td>
+                                <td>R$ 3.299,00</td>
+                                <td><span class="status active">Ativo</span></td>
+                                <td class="actions">
+                                    <button class="action-btn edit">Editar</button>
+                                    <button class="action-btn delete">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>Fone de Ouvido Sony WH-1000XM4</td>
+                                <td>Áudio</td>
+                                <td>R$ 1.899,00</td>
+                                <td><span class="status inactive">Inativo</span></td>
+                                <td class="actions">
+                                    <button class="action-btn edit">Editar</button>
+                                    <button class="action-btn delete">Excluir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>005</td>
+                                <td>iPad Pro 11"</td>
+                                <td>Tablets</td>
+                                <td>R$ 6.799,00</td>
+                                <td><span class="status active">Ativo</span></td>
+                                <td class="actions">
+                                    <button class="action-btn edit">Editar</button>
+                                    <button class="action-btn delete">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn prev" disabled>Anterior</button>
+                    <div class="page-numbers">
+                        <button class="page-number active">1</button>
+                        <button class="page-number">2</button>
+                        <button class="page-number">3</button>
+                    </div>
+                    <button class="pagination-btn next">Próximo</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Tech Storage</h3>
+                    <p>Gerenciamento inteligente de estoque</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="estoque.html">Estoque</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Receba Novidades</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit" class="btn btn-secondary">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tech Storage. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
