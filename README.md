@@ -61,10 +61,16 @@ https://cloud.mongodb.com/v2/67eb33d69ee00e74d2df5194#/clusters/detail/back-end-
 
 ## 📦 Dependências do Projeto
 
-Dependência	Versão	Descrição <br>
-express	^4.17.x	Framework web para Node.js <br>
-cors	^2.x.x	Middleware para habilitar CORS <br>
-dotenv	^10.x.x	Carrega variáveis de ambiente <br>
-mongoose	^6.x.x	ODM para modelagem de dados MongoDB <br>
-nodemon	^2.x.x	Ferramenta para reiniciar o servidor automaticamente <br>
+• Dependência	Versão	Descrição <br>
+• express	^4.17.x	Framework web para Node.js <br>
+• cors	^2.x.x	Middleware para habilitar CORS <br>
+• dotenv	^10.x.x	Carrega variáveis de ambiente <br>
+• mongoose	^6.x.x	ODM para modelagem de dados MongoDB <br>
+• nodemon	^2.x.x	Ferramenta para reiniciar o servidor automaticamente <br>
+
+## Autores
+• Ryan Carlo Negretti Pereira <br>
+• Pedro Silva Martins <br>
+• Raphael <br>
+
 
