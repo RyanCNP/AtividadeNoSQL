@@ -7,6 +7,7 @@
     <title>Tech Storage - Gerenciamento de Estoque</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./images/logoA.png">
+    <link rel="shortcut icon" href="./images/logoA.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -16,14 +17,14 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Tech Storage</h1>
+                <img src="./images/logoB.png" alt="logo marca da Tech Storage">
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="products.html">Produtos</a></li>
                     <li><a href="storage.html" class="active">Estoque</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="index.html#contact">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,7 +43,7 @@
                 <div class="management-tools">
                     <div class="search-bar">
                         <input type="text" placeholder="Pesquisar no estoque..." id="inventory-search">
-                        <button class="search-btn">Buscar</button>
+                        <button class="search-btn" onclick="searchInventory()">Buscar</button>
                     </div>
                     <button class="btn btn-primary add-btn">+ Atualizar Estoque</button>
                 </div>
@@ -143,9 +144,9 @@
                     <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="index.html">Início</a></li>
-                        <li><a href="produtos.html">Produtos</a></li>
-                        <li><a href="estoque.html">Estoque</a></li>
-                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="products.html">Produtos</a></li>
+                        <li><a href="storage.html">Estoque</a></li>
+                        <li><a href="index.html#contact">Contato</a></li>
                     </ul>
                 </div>
             </div>
@@ -154,6 +155,129 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal para Adicionar Lote no Estoque -->
+    <div class="modal-overlay" id="add-stock-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Atualizar Estoque</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" id="add-stock-form">
+                    <div class="form-group">
+                        <label for="stock-product-code">Código do Produto</label>
+                        <input type="text" id="stock-product-code" name="cod_prod" placeholder="Ex: XX-XXX-000"
+                            required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="stock-quantity">Quantidade</label>
+                            <input type="number" id="stock-quantity" name="qtd" min="1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stock-date">Data de Entrada</label>
+                            <input type="date" id="stock-date" name="entryDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stock-description">Descrição</label>
+                        <textarea id="stock-description" name="descricao" placeholder="Detalhes sobre este lote"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stock-status">Status</label>
+                        <select id="stock-status" name="status" required>
+                            <option value="active">Ativo</option>
+                            <option value="pending">Pendente</option>
+                            <option value="reserved">Reservado</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Cancelar</button>
+                <button class="btn btn-primary" id="save-stock">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Script para controlar o modal de estoque
+        document.addEventListener('DOMContentLoaded', function () {
+            const addBtn = document.querySelector('.add-btn');
+            const modal = document.getElementById('add-stock-modal');
+            const closeBtn = modal.querySelector('.modal-close');
+            const cancelBtn = modal.querySelector('.modal-cancel');
+            const saveBtn = document.getElementById('save-stock');
+            const form = document.getElementById('add-stock-form');
+
+            // Definir a data de hoje como padrão
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('stock-date').value = today;
+
+            // Abrir modal
+            addBtn.addEventListener('click', function () {
+                modal.classList.add('active');
+            });
+
+            // Fechar modal
+            function closeModal() {
+                modal.classList.remove('active');
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+
+            // Fechar modal ao clicar fora dele
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Também adicionar evento para os botões de adicionar nas linhas da tabela
+            const addButtons = document.querySelectorAll('.action-btn.add');
+            addButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Aqui você poderia preencher o formulário com os dados do produto selecionado
+                    // Por exemplo, pegar o código do produto da linha da tabela
+                    const row = this.closest('tr');
+                    const productId = row.cells[0].textContent;
+                    const productName = row.cells[1].textContent;
+
+                    // Preencher o campo de código do produto
+                    document.getElementById('stock-product-code').value = productId;
+
+                    // Adicionar o nome do produto ao título do modal para melhor contexto
+                    modal.querySelector('.modal-header h3').textContent = `Atualizar Estoque: ${productName}`;
+
+                    modal.classList.add('active');
+                });
+            });
+
+            // Salvar atualização de estoque
+            saveBtn.addEventListener('click', function () {
+                // Verificar se o formulário é válido
+                if (form.checkValidity()) {
+                    // Aqui você adicionaria o código para enviar os dados para o servidor
+                    // Por enquanto, apenas fechamos o modal e mostramos uma mensagem
+                    alert('Estoque atualizado com sucesso!');
+                    closeModal();
+                    form.reset();
+                    document.getElementById('stock-date').value = today;
+                } else {
+                    // Trigger form validation
+                    form.reportValidity();
+                }
+            });
+        });
+    </script>
     <script src="./scripts/storage_script.js"></script>
 </body>
 

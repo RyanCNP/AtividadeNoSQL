@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Storage - Gerenciamento de Produtos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./images/logoA.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -15,14 +16,15 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Tech Storage</h1>
+                <img src="./images/logoB.png" alt="logo marca da Tech Storage">
             </div>
+
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="products.html" class="active">Produtos</a></li>
                     <li><a href="storage.html">Estoque</a></li>
-                    <li><a href="#contact">Contato</a></li>
+                    <li><a href="index.html#contact">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -142,17 +144,10 @@
                     <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="index.html">Início</a></li>
-                        <li><a href="produtos.html">Produtos</a></li>
-                        <li><a href="estoque.html">Estoque</a></li>
-                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="prodducts.html">Produtos</a></li>
+                        <li><a href="storage.html">Estoque</a></li>
+                        <li><a href="index.html#contact">Contato</a></li>
                     </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h4>Receba Novidades</h4>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Seu e-mail">
-                        <button type="submit" class="btn btn-secondary">Inscrever</button>
-                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -160,6 +155,111 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal para Adicionar Produto -->
+    <div class="modal-overlay" id="add-product-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Adicionar Novo Produto</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" id="add-product-form">
+                    <div class="form-group">
+                        <label for="product-name">Nome do Produto</label>
+                        <input type="text" id="product-name" name="nome" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-category">Categoria</label>
+                            <select id="product-category" name="categoria" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="Celular">Celular</option>
+                                <option value="Computador">Computador</option>
+                                <option value="Televisor">Televisor</option>
+                                <option value="Áudio">Áudio</option>
+                                <option value="Games">Games</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-brand">Marca</label>
+                            <input type="text" id="product-brand" name="marca" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-description">Descrição</label>
+                        <textarea id="product-description" name="descricao" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-price">Preço (R$)</label>
+                            <input type="number" id="product-price" name="preco" step="0.01" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-code">Código do Produto</label>
+                            <input type="text" id="product-code" name="cod_prod" placeholder="Ex: XX-XXX-000" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-cancel">Cancelar</button>
+                <button class="btn btn-primary" id="save-product">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script para controlar o modal de produtos
+        document.addEventListener('DOMContentLoaded', function () {
+            const addBtn = document.querySelector('.add-btn');
+            const modal = document.getElementById('add-product-modal');
+            const closeBtn = modal.querySelector('.modal-close');
+            const cancelBtn = modal.querySelector('.modal-cancel');
+            const saveBtn = document.getElementById('save-product');
+            const form = document.getElementById('add-product-form');
+
+            // Abrir modal
+            addBtn.addEventListener('click', function () {
+                modal.classList.add('active');
+            });
+
+            // Fechar modal
+            function closeModal() {
+                modal.classList.remove('active');
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+
+            // Fechar modal ao clicar fora dele
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Salvar produto
+            saveBtn.addEventListener('click', function () {
+                // Verificar se o formulário é válido
+                if (form.checkValidity()) {
+                    // Aqui você adicionaria o código para enviar os dados para o servidor
+                    // Por enquanto, apenas fechamos o modal e mostramos uma mensagem
+                    alert('Produto adicionado com sucesso!');
+                    closeModal();
+                    form.reset();
+                } else {
+                    // Trigger form validation
+                    form.reportValidity();
+                }
+            });
+        });
+    </script>
     <script src="./scripts/product_script.js"></script>
 </body>
 
