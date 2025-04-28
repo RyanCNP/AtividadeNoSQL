@@ -1,20 +1,5 @@
 // Configuração da API
-const API_URL = 'https://backend-geo-kappa.vercel.app/api';
-
-// Estado da aplicação
-let estado = {
-    municipios: {
-        pagina: 1,
-        limite: 10,
-        ordenacao: '_id',
-        ordem: 'asc',
-        filtroNome: '',
-        total: 0,
-        dados: []
-    },
-    municipioAtual: null,
-    municipioExcluir: null
-};
+const API_URL = 'https://back-end-tech-storage.vercel.app/api';
 
 // Elementos DOM
 const elementos = {
