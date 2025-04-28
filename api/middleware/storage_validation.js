@@ -13,7 +13,7 @@ export const validateRequest = (req, res, next) => {
     next();
 };
 
-export const validadeteObjectId = [
+export const validateObjectId = [
     param("id").isMongoId().withMessage("Formato de Id inválido!"),
     validateRequest
 ];

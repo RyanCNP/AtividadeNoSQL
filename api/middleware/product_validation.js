@@ -1,8 +1,5 @@
 const { body } = require('express-validator');
 
-
-
-
 const productValidationRules = [
 
   //cod_produto nao pode ser nulo e não pode ser repetido.
